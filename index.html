@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WellFound Navbar Clone</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="navbar">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#">WellFound</a>
+            </div>
+
+            <!-- Desktop Navigation -->
+            <ul class="nav-links">
+                <li class="nav-item">
+                    <a href="#">Startups <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <div class="dropdown">
+                        <a href="#">Startup Jobs</a>
+                        <a href="#">Recruiting</a>
+                        <a href="#">Investors</a>
+                        <a href="#">Venture Funds</a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a href="#">Jobs <i class="fas fa-chevron-down dropdown-arrow"></i></a>
+                    <div class="dropdown">
+                        <a href="#">Browse Jobs</a>
+                        <a href="#">Job Collections</a>
+                        <a href="#">Salary Calculator</a>
+                    </div>
+                </li>
+                <li><a href="#">Blog</a></li>
+                <li><a href="#">AngelList Talent</a></li>
+            </ul>
+
+            <!-- Auth Buttons -->
+            <div class="auth-buttons">
+                <button class="btn btn-login">Log in</button>
+                <button class="btn btn-signup">Sign up</button>
+            </div>
+
+            <!-- Mobile Toggle -->
+            <div class="menu-toggle">
+                <i class="fas fa-bars"></i>
+            </div>
+        </div>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div class="mobile-menu">
+            <ul class="mobile-nav-links">
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-dropdown-toggle">Startups <i class="fas fa-chevron-down"></i></a>
+                    <div class="mobile-dropdown">
+                        <a href="#">Startup Jobs</a>
+                        <a href="#">Recruiting</a>
+                        <a href="#">Investors</a>
+                        <a href="#">Venture Funds</a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item">
+                    <a href="#" class="mobile-dropdown-toggle">Jobs <i class="fas fa-chevron-down"></i></a>
+                    <div class="mobile-dropdown">
+                        <a href="#">Browse Jobs</a>
+                        <a href="#">Job Collections</a>
+                        <a href="#">Salary Calculator</a>
+                    </div>
+                </li>
+                <li class="mobile-nav-item"><a href="#">Blog</a></li>
+                <li class="mobile-nav-item"><a href="#">AngelList Talent</a></li>
+            </ul>
+            <div class="mobile-auth-buttons">
+                <button class="btn btn-login">Log in</button>
+                <button class="btn btn-signup">Sign up</button>
+            </div>
+        </div>
+    </nav>
+
+    <script src="script.js"></script>
+</body>
+</html>
