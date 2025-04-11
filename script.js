@@ -2,17 +2,21 @@ window.addEventListener("load", () => {
   const preloader = document.getElementById("videoPreloader");
   const video = document.getElementById("preloadVideo");
 
-  // Ensure video metadata is loaded (duration, dimensions, etc.)
-  video.addEventListener("loadeddata", () => {
-    // Optional: give it a few seconds to play
+  // Try playing video explicitly (for browsers that block autoplay)
+  video.play().then(() => {
+    console.log("Video started");
+    
     setTimeout(() => {
       preloader.classList.add("shrink");
 
-      // Hide after animation finishes
       setTimeout(() => {
         preloader.style.display = "none";
-      }, 1200); // Match this to your transition duration
-    }, 3000); // Play full or partial video before shrinking
+      }, 1200);
+    }, 3000);
+
+  }).catch((error) => {
+    console.warn("Autoplay failed:", error);
+    // Optional: Show a play button for user interaction if needed
   });
 });
 
