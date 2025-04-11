@@ -24,6 +24,63 @@ body {
 
 }
 
+ /* ===== Preloader ===== */
+
+/* Preloader Styles */
+#videoPreloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: #f4f4f4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  overflow: hidden;
+  transition: all 1s ease-in-out, opacity 1s ease-in-out;
+  overflow: hidden;
+  box-shadow: 0 0 10px #f4f4f4; /* same as background */
+}
+
+#videoPreloader video {
+  width: 102%;
+  height: 102%;
+  object-fit: cover;
+  transform: scale(1.02); /* covers slight edges */
+}
+
+/* Shrinking and positioning it responsively */
+#videoPreloader.shrink {
+  width: clamp(250px, 40vw, 400px);
+  height: clamp(150px, 30vh, 300px);
+  position: absolute;
+  top: auto;
+  left: auto;
+  transform: translate(10vw, 30vh); /* This might need media query adjustments */
+  z-index: 100;
+  border-radius: 20px;
+  transition: all 1s ease-in-out, opacity 1s ease-in-out;
+}
+
+/* Optional: Adjust position on smaller screens */
+@media (max-width: 768px) {
+  #videoPreloader.shrink {
+    transform: translate(5vw, 25vh);
+  }
+}
+
+@media (max-width: 480px) {
+  #videoPreloader.shrink {
+    width: 80vw;
+    height: 30vh;
+    transform: translate(5vw, 20vh);
+  }
+}
+
+
+
 /* ===== NAVBAR STYLES ===== */
 nav {
   background: var(--white);
