@@ -1,31 +1,31 @@
-// Preloaer 
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("videoPreloader");
-  const targetVideo = document.querySelector(".leftsection video");
+// // Preloaer 
+// window.addEventListener("load", () => {
+//   const preloader = document.getElementById("videoPreloader");
+//   const targetVideo = document.querySelector(".leftsection video");
 
-  // Wait for video playback or loading
-  setTimeout(() => {
-    const targetRect = targetVideo.getBoundingClientRect();
+//   // Wait for video playback or loading
+//   setTimeout(() => {
+//     const targetRect = targetVideo.getBoundingClientRect();
 
-    // Animate to match leftsection video
-    preloader.style.transition = "all 1s ease-in-out, opacity 1s ease-in-out";
-    preloader.style.position = "fixed";
-    preloader.style.top = `${targetRect.top}px`;
-    preloader.style.left = `${targetRect.left}px`;
-    preloader.style.width = `${targetRect.width}px`;
-    preloader.style.height = `${targetRect.height}px`;
+//     // Animate to match leftsection video
+//     preloader.style.transition = "all 1s ease-in-out, opacity 1s ease-in-out";
+//     preloader.style.position = "fixed";
+//     preloader.style.top = `${targetRect.top}px`;
+//     preloader.style.left = `${targetRect.left}px`;
+//     preloader.style.width = `${targetRect.width}px`;
+//     preloader.style.height = `${targetRect.height}px`;
 
-    // Fade it out after shrinking
-    setTimeout(() => {
-      preloader.style.opacity = "0";
+//     // Fade it out after shrinking
+//     setTimeout(() => {
+//       preloader.style.opacity = "0";
 
-      // Finally hide it
-      setTimeout(() => {
-        preloader.style.display = "none";
-      }, 1000); // Match fade duration
-    }, 1000); // Wait for shrink transition to finish
-  }, 3000); // Delay before starting shrink (match video length)
-});
+//       // Finally hide it
+//       setTimeout(() => {
+//         preloader.style.display = "none";
+//       }, 1000); // Match fade duration
+//     }, 1000); // Wait for shrink transition to finish
+//   }, 3000); // Delay before starting shrink (match video length)
+// });
 
 
 document.addEventListener('DOMContentLoaded', function() {
