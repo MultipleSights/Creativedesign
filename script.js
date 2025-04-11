@@ -1,13 +1,20 @@
-// Preloaer 
+// Preloader Script
 window.addEventListener("load", () => {
+  const preloadVideo = document.getElementById("preloadVideo");
   const preloader = document.getElementById("videoPreloader");
   const targetVideo = document.querySelector(".leftsection video");
 
-  // Wait for video playback or loading
-  setTimeout(() => {
+  // Make sure everything exists
+  if (!preloadVideo || !preloader || !targetVideo) {
+    console.warn("Preloader or target video not found.");
+    return;
+  }
+
+  // When the preloader video can play through without buffering
+  preloadVideo.addEventListener("canplaythrough", () => {
     const targetRect = targetVideo.getBoundingClientRect();
 
-    // Animate to match leftsection video
+    // Animate shrink
     preloader.style.transition = "all 1s ease-in-out, opacity 1s ease-in-out";
     preloader.style.position = "fixed";
     preloader.style.top = `${targetRect.top}px`;
@@ -15,18 +22,27 @@ window.addEventListener("load", () => {
     preloader.style.width = `${targetRect.width}px`;
     preloader.style.height = `${targetRect.height}px`;
 
-    // Fade it out after shrinking
+    // After shrink animation, start fade out
     setTimeout(() => {
       preloader.style.opacity = "0";
 
-      // Finally hide it
+      // After fade out, remove preloader from view
       setTimeout(() => {
         preloader.style.display = "none";
       }, 1000); // Match fade duration
-    }, 1000); // Wait for shrink transition to finish
-  }, 3000); // Delay before starting shrink (match video length)
-});
+    }, 1000); // Wait for shrink to complete
+  });
 
+  // Optional fallback: remove preloader after 6s if video never loads
+  setTimeout(() => {
+    if (preloader.style.display !== "none") {
+      preloader.style.opacity = "0";
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 1000);
+    }
+  }, 6000);
+});
 
 
 

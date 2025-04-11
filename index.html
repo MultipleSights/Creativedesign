@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
 
     <title>Creative Arch</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -15,11 +16,12 @@
 </head>
 
 <body>
-    <!-- Preloader Video Container -->
+<!-- Preloader Video Container -->
     <div id="videoPreloader">
-        <video src="mediaSource/Navvdo.mp4" autoplay muted playsinline id="preloadVideo"></video>
+        <video src="mediaSource/Navvdo.mp4" autoplay muted playsinline preload="auto" id="preloadVideo"></video>
     </div>
-
+    
+<!-- Navbar -->
     <nav>
         <div class="navbar">
             <!-- Logo -->
