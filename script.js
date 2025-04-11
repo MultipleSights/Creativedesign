@@ -1,3 +1,22 @@
+window.addEventListener("load", () => {
+  const preloader = document.getElementById("videoPreloader");
+  const video = document.getElementById("preloadVideo");
+
+  // Ensure video metadata is loaded (duration, dimensions, etc.)
+  video.addEventListener("loadeddata", () => {
+    // Optional: give it a few seconds to play
+    setTimeout(() => {
+      preloader.classList.add("shrink");
+
+      // Hide after animation finishes
+      setTimeout(() => {
+        preloader.style.display = "none";
+      }, 1200); // Match this to your transition duration
+    }, 3000); // Play full or partial video before shrinking
+  });
+});
+
+
 // Preloaer 
 window.addEventListener("load", () => {
   const preloader = document.getElementById("videoPreloader");
