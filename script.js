@@ -1,26 +1,3 @@
-window.addEventListener("load", () => {
-  const preloader = document.getElementById("videoPreloader");
-  const video = document.getElementById("preloadVideo");
-
-  // Try playing video explicitly (for browsers that block autoplay)
-  video.play().then(() => {
-    console.log("Video started");
-    
-    setTimeout(() => {
-      preloader.classList.add("shrink");
-
-      setTimeout(() => {
-        preloader.style.display = "none";
-      }, 1200);
-    }, 3000);
-
-  }).catch((error) => {
-    console.warn("Autoplay failed:", error);
-    // Optional: Show a play button for user interaction if needed
-  });
-});
-
-
 // Preloaer 
 window.addEventListener("load", () => {
   const preloader = document.getElementById("videoPreloader");
